@@ -1,4 +1,4 @@
-*html5validator.txt*	description
+*html5validator.txt*	html5 validate using Validator.nu API
 
 Author:  Kazuhito Hokamura <http://webtech-walker.com/>
 Version: 0.0.1
