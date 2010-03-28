@@ -1,6 +1,6 @@
 " html5validator.vim - html5 validate using Validator.nu API
 "
-" Author:  Kazuhito Hokamura <Kazuhito Hokamura>
+" Author:  Kazuhito Hokamura <http://webtech-walker.com/>
 " Version: 0.0.1
 " License: MIT License <http://www.opensource.org/licenses/mit-license.php>
 
