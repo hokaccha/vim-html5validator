@@ -20,6 +20,11 @@ function! s:error(str)
 endfunction
 
 function! s:html5validate()
+    if !executable('curl')
+        call s:error('"curl" not execute able')
+        return
+    endif
+
     let url = 'http://html5.validator.nu/'
     let filename = expand('%:p')
     let cmd = printf('curl -s --form out=json --form content=@%s %s',
