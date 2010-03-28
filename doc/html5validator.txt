@@ -27,6 +27,7 @@ COMMANDS					*html5validator-commands*
 :HTML5Vlidate						*:HTML5Vlidate*
 			Exec HTML5 validation. This command dosen't need the
 			arguments.
+			Using curl when API request.
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:
