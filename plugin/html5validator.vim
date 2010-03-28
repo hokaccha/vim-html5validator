@@ -5,7 +5,7 @@
 " License: MIT License <http://www.opensource.org/licenses/mit-license.php>
 
 if exists('g:loaded_html5validator')
-    finish
+    "finish
 endif
 let g:loaded_html5validator = 1
 
@@ -26,10 +26,12 @@ function! s:html5validate()
     endif
 
     let url = 'http://html5.validator.nu/'
+    let timeout = 5
     let filename = expand('%:p')
     let quote = &shellxquote == '"' ?  "'" : '"'
-    let cmd = printf('curl -s --form out=json --form content=@%s%s%s %s',
-    \                 quote, filename, quote, url)
+    let cmd  = 'curl -s --connect-timeout ' . timeout . ' '
+    let cmd .= '--form out=json --form content=@' .quote.filename.quote. ' '
+    let cmd .= url
 
     let json = system(cmd)
     if empty(json)
