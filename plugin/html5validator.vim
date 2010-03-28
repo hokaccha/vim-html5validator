@@ -5,7 +5,7 @@
 " License: MIT License <http://www.opensource.org/licenses/mit-license.php>
 
 if exists('g:loaded_html5validator')
-    "finish
+    finish
 endif
 let g:loaded_html5validator = 1
 
