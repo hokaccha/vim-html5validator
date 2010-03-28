@@ -19,23 +19,9 @@ function! s:error(str)
     echohl None
 endfunction
 
-function! s:html5validate(filename)
-    let filename = a:filename
-    if filename == ''
-        let filename = expand('%:p')
-        if filename == ''
-            call s:error('no such file')
-            return
-        endif
-    else
-        let filename = fnamemodify(filename, ':p')
-        if !filereadable(filename)
-            call s:error('no such file: ' . a:filename)
-            return
-        endif
-    endif
-
+function! s:html5validate()
     let url = 'http://html5.validator.nu/'
+    let filename = expand('%:p')
     let cmd = printf('curl -s --form out=json --form content=@%s %s',
     \                 filename, url)
     let res = system(cmd)
@@ -66,7 +52,7 @@ function! s:html5validate(filename)
     copen
 endfunction
 
-command! -complete=file -nargs=? HTML5Vlidate call s:html5validate(<q-args>)
+command! -complete=file -nargs=0 HTML5Vlidate call s:html5validate()
 
 
 let &cpo = s:save_cpo
