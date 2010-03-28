@@ -27,13 +27,18 @@ function! s:html5validate()
 
     let url = 'http://html5.validator.nu/'
     let filename = expand('%:p')
-    let cmd = printf('curl -s --form out=json --form content=@%s %s',
-    \                 filename, url)
+    let quote = &shellxquote == '"' ?  "'" : '"'
+    let cmd = printf('curl -s --form out=json --form content=@%s%s%s %s',
+    \                 quote, filename, quote, url)
 
     let json = system(cmd)
     if empty(json)
         call s:error('request faild')
         return
+    endif
+
+    if has('win32')
+        let json = iconv(json, 'utf-8', 'cp932')
     endif
 
     let res_data = eval( substitute(json, '[\n\r]', '', 'g') )
