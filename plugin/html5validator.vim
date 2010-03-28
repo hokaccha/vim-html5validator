@@ -24,14 +24,16 @@ function! s:html5validate()
     let filename = expand('%:p')
     let cmd = printf('curl -s --form out=json --form content=@%s %s',
     \                 filename, url)
-    let res = system(cmd)
-    if empty(res)
+
+    let json = system(cmd)
+    if empty(json)
         call s:error('request faild')
         return
     endif
-    let json = eval( substitute(res, '[\n\r]', '', 'g') )
 
-    if empty(json.messages)
+    let res_data = eval( substitute(json, '[\n\r]', '', 'g') )
+
+    if empty(res_data.messages)
         echo 'Valid HTML5!!'
         cgetexpr ''
         cclose
@@ -39,7 +41,7 @@ function! s:html5validate()
     endif
 
     let errors = []
-    for row in json.messages
+    for row in res_data.messages
         let lastline = has_key(row, 'lastLine') ? row.lastLine : 1
         let type     = has_key(row, 'type')     ? row.type     : '-'
         let message  = has_key(row, 'message')
