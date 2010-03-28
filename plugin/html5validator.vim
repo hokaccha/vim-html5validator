@@ -64,7 +64,7 @@ function! s:html5validate()
     copen
 endfunction
 
-command! -complete=file -nargs=0 HTML5Vlidate call s:html5validate()
+command! -complete=file -nargs=0 HTML5Validate call s:html5validate()
 
 
 let &cpo = s:save_cpo

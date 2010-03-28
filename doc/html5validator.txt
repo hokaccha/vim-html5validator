@@ -24,7 +24,7 @@ INTERFACE					*html5validator-interface*
 ------------------------------------------------------------------------------
 COMMANDS					*html5validator-commands*
 
-:HTML5Vlidate						*:HTML5Vlidate*
+:HTML5Validate						*:HTML5Validate*
 			Exec HTML5 validation. This command dosen't need the
 			arguments.
 			Using curl when API request.
