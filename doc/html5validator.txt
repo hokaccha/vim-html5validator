@@ -10,11 +10,13 @@ CONTENTS					*html5validator-contents*
 INTRODUCTION		|html5validator-introduction|
 INTERFACE		|html5validator-interface|
   COMMANDS		  |html5validator-commands|
-  VARIABLES		  |html5validator-variables|
-  FUNCTIONS		  |html5validator-functions|
 
 ==============================================================================
 INTRODUCTION					*html5validator-introduction*
+
+If this plugin is used, it comes to be able to do the validation of html5 in
+vim. This pluign uses Validator.nu API.
+http://html5.validator.nu/
 
 ==============================================================================
 INTERFACE					*html5validator-interface*
@@ -22,11 +24,9 @@ INTERFACE					*html5validator-interface*
 ------------------------------------------------------------------------------
 COMMANDS					*html5validator-commands*
 
-------------------------------------------------------------------------------
-VARIABLES					*html5validator-variables*
-
-------------------------------------------------------------------------------
-FUNCTIONS					*html5validator-functions*
+:HTML5Vlidate						*:HTML5Vlidate*
+			Exec HTML5 validation. This command dosen't need the
+			arguments.
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:fen:fdl=0:fdm=marker:
