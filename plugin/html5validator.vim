@@ -29,7 +29,7 @@ function! s:html5validate()
     let timeout = 5
     let filename = expand('%:p')
     let quote = &shellxquote == '"' ?  "'" : '"'
-    let cmd  = 'curl -s --connect-timeout ' . timeout . ' '
+    let cmd  = 'curl -0 -s --connect-timeout ' . timeout . ' '
     let cmd .= '--form out=json --form content=@' .quote.filename.quote. ' '
     let cmd .= url
 
